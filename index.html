@@ -1,0 +1,596 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sunita Tamang | Personal Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* GENERAL STYLING */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fffdf9;
+            color: #40372f;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* NAVIGATION BAR */
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 9%;
+            background: #fffdf9;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #eee8df;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 27px;
+            font-weight: 700;
+            color: #66503e;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #51463e;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #a17b61;
+        }
+
+        /* HOME SECTION */
+
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 10%;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1.2s ease;
+        }
+
+        .hero small {
+            color: #a17b61;
+            letter-spacing: 4px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 7vw, 76px);
+            margin: 25px 0;
+            line-height: 1.2;
+            color: #40372f;
+        }
+
+        .hero h1 span {
+            color: #a17b61;
+        }
+
+        .hero p {
+            color: #81766e;
+            font-size: 16px;
+            line-height: 2;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 32px;
+            padding: 13px 32px;
+            background: #514237;
+            color: white;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #a17b61;
+            transform: translateY(-4px);
+        }
+
+        /* COMMON SECTION STYLING */
+
+        section {
+            padding: 90px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            margin-bottom: 45px;
+            color: #40372f;
+        }
+
+        .section-title span {
+            color: #a17b61;
+        }
+
+        /* ABOUT SECTION */
+
+        .about {
+            background: #f7f3ed;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 780px;
+            margin: auto;
+        }
+
+        .about p {
+            color: #766c63;
+            font-size: 15px;
+            line-height: 2.2;
+        }
+
+        /* EDUCATION SECTION */
+
+        .education {
+            background: #fffdf9;
+        }
+
+        .education-card {
+            max-width: 650px;
+            margin: auto;
+            padding: 30px;
+            border-left: 3px solid #a17b61;
+            background: #f7f3ed;
+        }
+
+        .education-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .education-card p {
+            color: #81766e;
+            line-height: 1.9;
+            font-size: 14px;
+        }
+
+        /* SKILLS SECTION */
+
+        .skills {
+            background: #f7f3ed;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #fffdf9;
+            padding: 28px 15px;
+            text-align: center;
+            border: 1px solid #eee8df;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+            border-color: #a17b61;
+        }
+
+        .skill-card h3 {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        /* PROJECT SECTION */
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            padding: 30px;
+            background: #f7f3ed;
+            border: 1px solid #eee8df;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .project-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: #70533e;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #81766e;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        /* CONTACT SECTION */
+
+        .contact {
+            background: #f7f3ed;
+            text-align: center;
+        }
+
+        .contact p {
+            color: #766c63;
+            margin: 15px 0;
+            font-size: 15px;
+        }
+
+        .contact a {
+            color: #967153;
+            transition: 0.3s;
+        }
+
+        .contact a:hover {
+            color: #40372f;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #40372f;
+            color: #f7f3ed;
+            font-size: 13px;
+        }
+
+        /* ANIMATION */
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 75vh;
+                padding: 50px 7%;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            section {
+                padding: 65px 7%;
+            }
+
+            .section-title {
+                font-size: 34px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header>
+
+        <div class="logo">Portfolio</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HOME SECTION -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <small>WELCOME TO MY PORTFOLIO</small>
+
+            <h1>
+                Hello, I'm <span>Sunita Tamang.</span>
+            </h1>
+
+            <p>
+                A BCA 6th Semester student passionate about
+                technology, creativity, and continuous learning.
+                I enjoy exploring new technologies, developing
+                my skills, and turning creative ideas into reality.
+            </p>
+
+            <a href="#about" class="btn">
+                Explore My World →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+
+    <section class="about" id="about">
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+        <div class="about-content">
+
+            <p>
+                Hello! I'm Sunita Tamang, currently pursuing
+                my Bachelor's degree in Computer Applications
+                (BCA), 6th Semester.
+
+                I am interested in programming, web development,
+                and modern technologies. I love learning new
+                things and improving my technical knowledge.
+
+                My goal is to become a skilled IT professional
+                and build meaningful digital solutions.
+                I believe that consistency, creativity, and
+                continuous learning are the keys to success.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION SECTION -->
+
+    <section class="education" id="education">
+
+        <h2 class="section-title">
+            My <span>Education</span>
+        </h2>
+
+        <div class="education-card">
+
+            <h3>Bachelor of Computer Applications</h3>
+
+            <p>
+                Currently studying in BCA 6th Semester.
+            </p>
+
+            <p>
+                Field: Information Technology
+            </p>
+
+            <p>
+                Location: Nepal
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS SECTION -->
+
+    <section class="skills" id="skills">
+
+        <h2 class="section-title">
+            My <span>Skills</span>
+        </h2>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <h3>HTML</h3>
+            </div>
+
+            <div class="skill-card">
+                <h3>CSS</h3>
+            </div>
+
+            <div class="skill-card">
+                <h3>JavaScript</h3>
+            </div>
+
+            <div class="skill-card">
+                <h3>Python</h3>
+            </div>
+
+            <div class="skill-card">
+                <h3>Java</h3>
+            </div>
+
+            <div class="skill-card">
+                <h3>MySQL</h3>
+            </div>
+
+            <div class="skill-card">
+                <h3>Web Development</h3>
+            </div>
+
+            <div class="skill-card">
+                <h3>Problem Solving</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS SECTION -->
+
+    <section class="projects" id="projects">
+
+        <h2 class="section-title">
+            My <span>Projects</span>
+        </h2>
+
+        <div class="projects-container">
+
+            <div class="project-card">
+
+                <h3>Student Attendance System</h3>
+
+                <p>
+                    An academic project developed to manage
+                    student attendance records and make
+                    attendance tracking easier and more efficient.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>Personal Portfolio</h3>
+
+                <p>
+                    A personal portfolio website created using
+                    HTML and CSS to introduce myself and
+                    showcase my technical skills.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>Programming Projects</h3>
+
+                <p>
+                    Different small programming projects
+                    developed while learning programming
+                    concepts and improving my coding skills.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+
+    <section class="contact" id="contact">
+
+        <h2 class="section-title">
+            Let's <span>Connect</span>
+        </h2>
+
+        <p>
+            Thank you for visiting my portfolio!
+        </p>
+
+        <p>
+            I would love to connect, learn, and share ideas.
+        </p>
+
+        <p>
+            Email:
+            <a href="mailto:yourmail@example.com">
+                sunutamang390@gmail.com
+            </a>
+        </p>
+
+        <p>
+            Location: Nepal
+        </p>
+
+        <a href="mailto:yourmail@example.com" class="btn">
+            Get In Touch →
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Sunita Tamang. All Rights Reserved.
+        </p>
+
+        <p>
+            Designed with care and creativity.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
